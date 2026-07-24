@@ -1,0 +1,97 @@
+{
+  "orbital": {
+    "altitude_km": 500.0,
+    "earth_radius_km": 6371.0,
+    "ground_station_separation_km": 4000.0,
+    "max_elevation_deg": 90.0,
+    "min_elevation_deg": 20.0,
+    "orbital_period_min": 94.6,
+    "pass_duration_sec": 600
+  },
+  "link": {
+    "atmospheric_height_km": 8.0,
+    "calibration_loss_dB": 9.0,
+    "detector_timing_jitter_ps": 500.0,
+    "extinction_coefficient_per_km": 0.07,
+    "ground_telescope_m": 1.0,
+    "pointing_loss_dB": 2.5,
+    "satellite_aperture_m": 0.3,
+    "tracking_jitter_urad": 1.0,
+    "wavelength_m": 0.00000085
+  },
+  "qkd": {
+    "dark_count_rate_hz": 300.0,
+    "decoy_probabilities": {
+      "signal": 0.8,
+      "vacuum": 0.05,
+      "weak": 0.15
+    },
+    "decoy_intensities": [
+      0.1,
+      0.0
+    ],
+    "detector_dead_time_us": 25.0,
+    "detector_efficiency": 0.12,
+    "error_correction_efficiency": 1.16,
+    "implementation_efficiency": 0.18,
+    "mean_photon_number": 0.8,
+    "netsquid_pulses_per_interval": 2048,
+    "optical_misalignment_error": 0.02,
+    "qber_abort_threshold": 0.11,
+    "sifting_fraction": 0.5,
+    "source_repetition_rate_hz": 100000000.0,
+    "token_size_bits": 256
+  },
+  "token_buffer": {
+    "buffer_capacity": 10000,
+    "clear_to_clear_probability": 0.70,
+    "cloudy_to_clear_probability": 0.5,
+    "clear_sky_probability": 0.7,
+    "pass_duration_min": 10.0,
+    "passes_per_day": 5,
+    "staleness_max_hours": 24.0,
+    "cover_traffic_ratio": 0.35,
+    "weather_model": "multi_state",
+    "weather_transitions": {
+      "clear": {"clear": 0.70, "thin_cloud": 0.20, "thick_cloud": 0.08, "storm": 0.02},
+      "thin_cloud": {"clear": 0.40, "thin_cloud": 0.35, "thick_cloud": 0.20, "storm": 0.05},
+      "thick_cloud": {"clear": 0.15, "thin_cloud": 0.30, "thick_cloud": 0.40, "storm": 0.15},
+      "storm": {"clear": 0.10, "thin_cloud": 0.20, "thick_cloud": 0.40, "storm": 0.30}
+    },
+    "weather_throughput": {
+      "clear": 1.0,
+      "thin_cloud": 0.5,
+      "thick_cloud": 0.1,
+      "storm": 0.0
+    }
+  },
+  "crdt": {
+    "leo_satellite_latency_ms": 600.0,
+    "terrestrial_latency_max_ms": 200.0,
+    "terrestrial_latency_min_ms": 50.0,
+    "terrestrial_merge_interval_ms": 100.0
+  },
+  "adversary": {
+    "holders": 80,
+    "max_sessions": 1000,
+    "verifiers": [
+      "GS-A",
+      "GS-B",
+      "GS-C"
+    ]
+  },
+  "sweep": {
+    "cn2_log_start": -17.0,
+    "cn2_log_stop": -13.0,
+    "cn2_points": 10,
+    "cn2_s1_values": [1e-17, 1e-15, 1e-14],
+    "cn2_s1_trials": 10,
+    "turbulence_trials": 100,
+    "altitudes_km": [400.0, 500.0, 600.0, 800.0, 1000.0],
+    "altitude_trials": 50,
+    "orbital_periods_min": [45.0, 60.0, 90.0, 120.0, 180.0, 1440.0],
+    "convergence_samples": 30,
+    "linkability_sessions": [50, 100, 200, 500, 1000],
+    "buffer_replicates": 3
+  }
+}

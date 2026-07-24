@@ -1,0 +1,7 @@
+--extra-index-url https://pypi.netsquid.org
+
+tqdm>=4.64
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+netsquid
